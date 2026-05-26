@@ -28,4 +28,4 @@ EXPOSE 8765
 HEALTHCHECK --interval=30s --timeout=5s --start-period=120s --retries=5 \
   CMD curl -fsS -m 2 http://localhost:8765/sse || exit 1
 
-ENTRYPOINT ["mcp-proxy", "--sse-port", "8765", "--sse-host", "0.0.0.0", "--pass-environment", "--", "mempalace-mcp"]
+ENTRYPOINT ["mcp-proxy", "--port", "8765", "--host", "0.0.0.0", "--pass-environment", "mempalace-mcp"]
